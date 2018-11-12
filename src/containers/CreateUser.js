@@ -14,7 +14,11 @@ const CreateUser = () => (
         {error && <p>{`Error: ${error}`}</p>}
         {data && <p>{`The User ${data.createUser.name} was created with the ID: ${data.createUser.id}`}</p>}
 
-        <Form onSubmit={createUser} />
+        <Form
+          onSubmit={(values) => createUser({
+            variables: values
+          })}
+        />
       </div>
     )}
   </Mutation>
