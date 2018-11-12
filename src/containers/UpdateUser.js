@@ -45,5 +45,4 @@ const UpdateUser = ({ match }) => (
   </Query>
 );
 
-
 export default UpdateUser;

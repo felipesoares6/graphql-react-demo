@@ -12,7 +12,9 @@ const CreateUser = () => (
       <div>
         {loading && <p>Loading...</p>}
         {error && <p>{`Error: ${error}`}</p>}
-        {data && <p>{`The User ${data.createUser.name} was created with the ID: ${data.createUser.id}`}</p>}
+        {data && <p>{`The User
+          ${data.createUser.name} was created with the ID: ${data.createUser.id}`}
+        </p>}
 
         <Form
           onSubmit={(values) => createUser({

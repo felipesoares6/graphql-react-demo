@@ -4,7 +4,7 @@ import { Mutation } from 'react-apollo';
 
 import { DELETE_USER } from '../queries/user';
 
-const CreateUser = ({ id }) => (
+const DeleteUser = ({ id }) => (
   <Mutation mutation={DELETE_USER}>
     {(deleteUser ,{ loading, error, data }) => (
       <React.Fragment>
@@ -21,4 +21,4 @@ const CreateUser = ({ id }) => (
 );
 
 
-export default CreateUser;
+export default DeleteUser;
