@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Home from '../containers/Home';
 import CreateUser from '../containers/CreateUser';
+import UpdateUser from '../containers/UpdateUser';
 
 const App = () => (
   <Router>
@@ -22,6 +23,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/users/create" component={CreateUser} />
+        <Route exact path="/users/update/:id" component={UpdateUser} />
       </Switch>
     </div>
   </Router>

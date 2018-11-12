@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import { Query } from 'react-apollo';
 
 import { GET_USERS } from '../queries/user';
@@ -23,7 +25,13 @@ const Home = () => (
             {data.users.map(user => (
               <li key={user.id}>
                 <h3>{user.name}</h3>
+
                 <p>{user.email}</p>
+
+                <Link to={`/users/update/${user.id}`}>
+                  Update user
+                </Link>
+
                 <DeleteUser id={user.id} />
               </li>
             ))}
