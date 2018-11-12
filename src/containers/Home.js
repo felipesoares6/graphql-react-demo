@@ -4,6 +4,8 @@ import { Query } from 'react-apollo';
 
 import { GET_USERS } from '../queries/user';
 
+import DeleteUser from './DeleteUser';
+
 const Home = () => (
   <Query query={GET_USERS}>
     {({ loading, error, data }) => {
@@ -22,6 +24,7 @@ const Home = () => (
               <li key={user.id}>
                 <h3>{user.name}</h3>
                 <p>{user.email}</p>
+                <DeleteUser id={user.id} />
               </li>
             ))}
           </ul>

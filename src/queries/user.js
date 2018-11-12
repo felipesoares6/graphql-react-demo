@@ -15,7 +15,14 @@ export const CREATE_USER = gql`
     createUser(name: $name, email: $email) {
       id,
       name,
-      email
+    }
+  }
+`;
+
+export const DELETE_USER = gql`
+  mutation deleteUser($id: ID!) {
+    deleteUser(id: $id) {
+      name
     }
   }
 `;
