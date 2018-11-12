@@ -6,12 +6,20 @@ class Form extends Component {
     email: ''
   }
 
+  componentDidMount() {
+    const { user } = this.props;
+
+    if (user) {
+      this.setState({ name: user.name, email: user.email })
+    }
+  }
+
   handleChange = ({ target }) => this.setState({ [target.name]: target.value })
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    this.props.onSubmit({ variables: { ...this.state } });
+    this.props.onSubmit(this.state);
   }
 
   render() {
@@ -39,7 +47,7 @@ class Form extends Component {
 
         <input
           type="submit"
-          value="Create user"
+          value="Save"
         />
       </form>
     )
